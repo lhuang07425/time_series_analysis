@@ -1,1 +1,2 @@
 # Time Series Analysis Project: Stock Price Prediction
+My name is Leon Huang. I am a student at William & Mary, double majoring in Computer Science and Mathematics. This project utilizes time series analysis with Pandas and Jupyter Notebook, incorporating machine learning with scikit-learn to predict stock prices.
