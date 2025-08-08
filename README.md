@@ -11,7 +11,6 @@ This project provides a time series analysis and forecasting of major American r
 - [Usage](#usage)
 - [Analysis Steps](#analysis-steps)
 - [Results](#results)
-- [License](#license)
 
 ---
 
@@ -91,10 +90,6 @@ The notebook is organized as follows:
 - The notebook produces plots showing both historical and forecasted stock prices for each company.
 - Example ARIMA and auto-ARIMA results are compared for each stock.
 - The code can easily be adapted to new stocks or longer forecast horizons.
-
-## License
-
-This project is provided under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
