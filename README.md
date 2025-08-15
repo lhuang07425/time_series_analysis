@@ -28,84 +28,78 @@ We used the best-performing model to evaluate seasonal forecasting accuracy acro
 
 ## Overview
 
-The notebook `analysis.ipynb` demonstrates:
+This repository provides a complete workflow for monthly forecasting of stock prices for seven major American retailers: Walmart (WMT), Target (TGT), Costco (COST), Home Depot (HD), Dollar General (DG), Lowe’s (LOW), and TJX Companies (TJX). The core notebook (`analysis.ipynb`) demonstrates how to:
 
-- Downloading historical stock price data for Walmart (WMT), Target (TGT), Costco (COST), Home Depot (HD), and Dollar General (DG)
-- Monthly frequency conversion
-- ARIMA modeling and forecasting
-- Visualization of historical and predicted prices
+- Download historical price data from Yahoo! Finance using `yfinance`
+- Convert daily prices to monthly frequency for analysis
+- Compare multiple time series forecasting models, including both manual and automated ARIMA, Exponential Smoothing, Facebook Prophet, and Theta models
+- Visualize historical trends and forecast results for each stock
 
-The project uses open-source libraries and Yahoo! Finance data, making it easily adaptable to other stocks or time series.
+All code is open-source, well-commented, and designed for easy adaptation to additional tickers or other time series problems.
 
 ## Features
 
-- **Automatic Data Download**: Fetches price data for multiple tickers from Yahoo! Finance.
-- **Visualization**: Plots historical monthly closing prices for all stocks.
-- **Manual and Auto ARIMA**: Compares hand-tuned ARIMA with automated order selection using `pmdarima`.
-- **Forecasting**: Produces 5-step forecasts for each stock.
-- **Clear, Educational Code**: All steps are commented and easy to follow.
+- **End-to-End Pipeline**: From data download and preparation to analysis, modeling, and visualization
+- **Multiple Retail Stocks**: Analyze and forecast prices for seven leading U.S. retailers
+- **Model Comparison**: Evaluate manual ARIMA, Auto ARIMA, Exponential Smoothing, Prophet, and Theta
+- **Educational Code**: Each step is explained and annotated for clarity
+- **Adaptable**: Easily modify tickers, time ranges, or models for your own use case
 
 ## Data
 
-- **Source**: Yahoo! Finance via [`yfinance`](https://github.com/ranaroussi/yfinance)
-- **Stocks Analyzed**:
-  - Walmart (WMT)
-  - Target (TGT)
-  - Costco (COST)
-  - Home Depot (HD)
-  - Dollar General (DG)
-- **Date Range**: 2015-01-01 to most recent available
+- **Source**: Yahoo! Finance API via [`yfinance`](https://github.com/ranaroussi/yfinance)
+- **Tickers**: WMT, TGT, COST, HD, DG, LOW, TJX
+- **Period**: 2015-01-01 through the most recent available date
 
 ## Requirements
 
-Install all dependencies using:
+Install all necessary packages with:
 
 ```bash
 pip install pandas yfinance matplotlib numpy statsmodels pmdarima
 ```
 
-Or see the top of the notebook for individual commands.
+Or see the installation code at the top of the notebook for step-by-step commands.
 
 ## Usage
 
-1. Clone this repository:
+1. Clone the repository:
     ```bash
     git clone https://github.com/lhuang07425/time_series_analysis.git
     cd time_series_analysis
     ```
 
-2. Open `analysis.ipynb` with Jupyter Notebook or JupyterLab:
+2. Open the notebook in Jupyter:
     ```bash
     jupyter notebook analysis.ipynb
     ```
 
-3. Run the notebook cells in order. The notebook will:
-    - Download and preprocess data
-    - Visualize historical trends
-    - Fit ARIMA models and forecast future prices
-    - Plot results
+3. Execute the cells in order. The notebook will:
+    - Download and preprocess price data
+    - Visualize historical prices for all stocks
+    - Fit and compare time series models
+    - Forecast future prices and plot results
 
 ## Analysis Steps
 
-The notebook is organized as follows:
+The notebook follows this logical structure:
 
-1. **Install and Import Libraries**
-2. **Data Download**: Fetch daily stock prices and convert to monthly frequency.
-3. **Exploratory Visualization**: Plot all stocks on one chart.
-4. **Manual ARIMA Modeling**: Fit a (1,1,1) ARIMA model as a baseline.
-5. **Auto ARIMA Modeling**: Use `pmdarima` to select the best ARIMA order for each stock.
-6. **Forecasting**: Forecast the next 5 months for each stock and plot results.
-7. **Visualization**: Overlay historical and predicted prices for clear comparison.
+1. **Install and Import Libraries**: Ensures all dependencies are available
+2. **Data Download**: Retrieves daily price data and converts it to monthly frequency
+3. **Visualization**: Plots monthly closing prices for all stocks to reveal trends
+4. **Manual ARIMA Modeling**: Fits (1,1,1) ARIMA models to each stock as a baseline
+5. **Auto ARIMA Modeling**: Uses `pmdarima` for automated order selection and fitting
+6. **Additional Models**: Applies Exponential Smoothing, Prophet, and Theta models for comparison
+7. **Forecasting and Plotting**: Forecasts next 5 months and overlays predictions on historical plots
 
 ## Results
 
-- The notebook produces plots showing both historical and forecasted stock prices for each company.
-- Example ARIMA and auto-ARIMA results are compared for each stock.
-- The code can easily be adapted to new stocks or longer forecast horizons.
+- The notebook generates visualizations for each stock, showing both historical and forecasted prices
+- RMSE is used to compare model performance, with Auto ARIMA generally providing the most accurate forecasts
+- All code is designed for easy modification to new tickers, longer forecast horizons, or additional model types
 
 ---
 
 **Author:** [lhuang07425](https://github.com/lhuang07425)
 
 For questions, open an issue or contact via GitHub.
-````
