@@ -1,6 +1,18 @@
-# Time Series Analysis of American Retail Stocks
+# Time Series Forecasting Analysis: Predicting American Retail Stock Prices
 
-This project provides a time series analysis and forecasting of major American retail stock prices using ARIMA models in Python. The analysis includes data acquisition, visualization, model building (both manual and auto ARIMA), and forecasting with clear, reproducible code in a Jupyter Notebook.
+This project tests five different time series analysis models to forecast stock prices. I chose to focus on America's top retail companies because the retail sector serves as a critical economic indicator, reflecting consumer spending patterns, and broader market trends.
+The five methods evaluated are:
+
+- Manual ARIMA model
+- ARIMA model with auto_arima from pmdarima
+- Exponential smoothing
+- Facebook Prophet
+- Theta model
+
+Every method was evaluated based on the root mean squared error (RMSE). I used RMSE because it penalizes large errors more than other popular metrics like Mean Absolute Error and Mean Absolute Percentage Error, making it ideal for identifying models that avoid significant forecasting mistakes in volatile stock price predictions.
+After determining the best model for forecasting stock prices, we found that the Auto ARIMA model achieved the lowest mean RMSE. The Auto ARIMA model outperformed the second-best model (seasonal auto ARIMA) by a statistically significant margin, with a p-value of 0.19639 from the t-test comparing their prediction accuracies.
+We used the best-performing model to evaluate seasonal forecasting accuracy across three periods: January to May, March to July, and August to December. The January to May prediction period proved most accurate, though the difference compared to August to December predictions was not statistically significant (p-value = 0.43886).
+
 
 ## Table of Contents
 
