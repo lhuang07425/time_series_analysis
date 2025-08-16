@@ -9,7 +9,7 @@ The five methods evaluated are:
 - Facebook Prophet
 - Theta model
 
-Every method was evaluated based on the root mean squared error (RMSE). I used RMSE because it penalizes large errors more than other popular metrics like Mean Absolute Error and Mean Absolute Percentage Error, making it ideal for identifying models that avoid significant forecasting mistakes in volatile stock price predictions.
+Every method was evaluated based on the root mean squared error (RMSE). I used RMSE because it is easier to interpret then MSE, and also penalizes large errors more than other popular metrics like Mean Absolute Error and Mean Absolute Percentage Error, making it ideal for identifying models that avoid significant forecasting mistakes in volatile stock price predictions.
 After determining the best model for forecasting stock prices, we found that the Auto ARIMA model achieved the lowest mean RMSE. The Auto ARIMA model outperformed the second-best model (seasonal auto ARIMA) by a statistically significant margin, with a p-value of 0.19639 from the t-test comparing their prediction accuracies.
 We used the best-performing model to evaluate seasonal forecasting accuracy across three periods: January to May, March to July, and August to December. The January to May prediction period proved most accurate, though the difference compared to August to December predictions was not statistically significant (p-value = 0.43886).
 
